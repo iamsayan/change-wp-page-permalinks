@@ -1,0 +1,1 @@
+# change-wp-page-permalinks
