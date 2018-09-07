@@ -1,100 +1,116 @@
-=== WordPress Page Extension ===
+=== WP Page Permalink Extension ===
 Contributors: Infosatech
-Tags: permalinks, change permalinks, page extension, wp page permalinks, change wp page url, page permalinks, page
+Tags: permalink, custom permalink, page permalink, page extension, page url, page permalinks, page
 Requires at least: 3.5
 Tested up to: 4.9
-Stable tag: 1.3.0
+Stable tag: 1.4.7
+Requires PHP: 5.3
+Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-This plugin helps to change WordPress Page Permalinks, which is by default enabled.
+This plugin helps to change WordPress Page Permalinks structure, which is not customizable by default.
 
 == Description ==
 
-This plugin helps to add anything like .html, .php as WordPress Page Extention on a WordPress site running 3.5 and beyond.
-The permalinks can be changed manually.
+Converting an old HTML, PHP, or ASP site to WordPress? WP Page Extension will let you create pages inside of WordPress and give them an extension you want. It will help your site never lose any old backlinks and SEO. You can choose any page to have any extension. Choices are: .html, .htm, .php, .xml, .shtml and .asp. If you don't pick an extension then it will just default to no extension.
 
-WordPress page extension is not customizable by default. This plugin helps to add anything like .html, .php as WordPress Page Extention and this plugin provides an easy way to change it once for all.
+Unlike other similar plugins, this one allows you to choose the extension with no pre-determined options. And you can change it anytime. This is particularly handy if you manage multiple sites since you can use the same plugin on all of them.
+
+WordPress page permalink structure or extension is not customizable by default. This plugin helps to add anything like .html, .php as WordPress Page Extention and this plugin provides an easy way to change it once for all pages.
+
+#### What does this plugin do?
+
+This plugin helps to add anything like .html, .php, .aspx, .htm, .asp, .shtml as WordPress Page Extention on a WordPress site running 3.5 and beyond.
+
+* Allows you to set custom page permalink structure and add an extension to pages.
+* Allows you to remove trailing slashes automatically from WordPress page permalink structure.
+* Allows you to set custom permalink structure for WordPress static posts page.
+
+#### Compatibility
+
+This plugin is tested with many popular SEO plugins like Yoast SEO, SEOPress etc. and fully compatible with WordPress Version 3.5 and beyond and also compatible with any WordPress theme.
+
+#### Support
+* Community support via the [support forums](https://wordpress.org/support/plugin/change-wp-page-permalinks) at wordpress.org.
 
 == Installation ==
 
-=== From within WordPress ===
 1. Visit 'Plugins > Add New'
-1. Search for 'WordPress Page Extension'
-1. Activate WordPress Page Extension from your Plugins page.
-1. Go to plugin settings page from 'Settings > Page Extension'.
+1. Search for 'WP Page Permalink Extension' and install it.
+1. Or you can upload the `change-wp-page-permalinks` folder to the `/wp-content/plugins/` directory manually.
+1. Activate WP Page Permalink Extension from your Plugins page.
+1. After activation go to 'Settings > WP Page Permalink'.
+1. Set your page extension and save changes.
 
-=== Manually ===
-1. Upload the `change-wp-page-permalinks` folder to the `/wp-content/plugins/` directory
-1. Activate the WordPress Page Extension plugin through the 'Plugins' menu in WordPress
-1. Go to plugin settings page from 'Settings > Page Extension'.
-
-=== After activation ===
-1. Enter your custom permalink and save changes.
-1. Boom! You have succesfully change your page url.
-
-To re-enable the default page permalinks, just deactivate the plugin through the 'Plugins' menu and resave your permalinks.
+To re-use the default page permalinks, just deactivate the plugin through the 'Plugins' menu and resave your permalinks.
 
 == Frequently Asked Questions ==
 
-= How to assign custom page extension? =
+= How to set custom page extension? =
 
-Go to 'Settings > Page Extension' and enter your custom page permalink and hit 'save changes'.
+Go to 'Settings > WP Page Permalink' and enter your custom page permalink and hit 'save changes'.
 
 = Is there an admin interface for this plugin? =
 
-Yes. You can access this from 'Settings > Page Extension'
+Yes. You can access this from 'Settings > WP Page Permalink'
 
 = How to check this is working? =
 
 Open any page of your website and you can see the change.
 
-The use the plugin to test it.
-
 == Screenshots ==
 
-1. This is the admin area of WordPress Page Extension.
-2. Enter your custom page permalinks which you want to use and hit save changes.
-3. Go to 'Settings > Page Extension' and resave permalinks.
-4. You are done!
+1. This is the admin area of WP Page Permalink Extension.
+2. Page permalink structure after using this plugin.
 
 == Changelog ==
 
-= 1.3.0 =
-* Fix : Page id shows as page paermalink when there is no value in input field.
+= 1.4.7 =
 
-= 1.2.0 =
-* Code rewrite.
-* Code cleanup.
+* Improved: Added a confirmation chcekbox for Static Posts Page Slug rewrite process.
+* Bug fixed.
 
-= 1.1.0 =
-* Compatible with multisite.
-* Introducing auto rerewrite method.
-* Minor Changes.
+= 1.4.6 =
 
-= 1.0.8 =
-* Compatible with WordpPress 4.8.
+* Tweak: now it is possible to add trailing slash only to static posts page even trailing slash has not already been included in WordPress permalink structure.
+* Fixed: Incorrectly translated strings.
 
-= 1.0.7 =
-* Minor Chnages.
+= 1.4.5 =
 
-= 1.0.6 =
-* Tweak in the configuaration.
+* Tweak: default static posts page URL will be replaced with custom static page structure.
+* Improved: static posts page detection mechanism.
+* Improved: trailing slashing system.
+* Fixed: now custom static page URL is also showing in the sitemap file of SEO plugins.
 
-= 1.0.5 =
-* Bug fix - Hook Updated.
+= 1.4.4 =
 
-= 1.0.4 =
-* Rename this plugin.
+* Added: an option to set custom permalink for static posts page.
+* Added: an option to remove trailing slashes from static post pages also.
+* Introduced: Flush Rules button to regenerate permalink structure from plugin settings page.
+* Improved: auto escape unwanted character from page permalink structure.
+* Tweak: now plugin option's visibility depends on WordPress permalink structure.
+* Fixed: a bug where `flush rewrite rules()` runs every time.
+* Fixed: Incorrectly translated strings.
+* Admin UI improved.
 
-= 1.0.3 =
-* Bug Fix and Performance Improved.
+= Other Versions =
 
-= 1.0.2 =
-* Bug Fix and Performance Improved.
+* View the <a href="https://plugins.svn.wordpress.org/change-wp-page-permalinks/trunk/changelog.txt" target="_blank">Changelog</a> file.
 
-= 1.0.1 =
-* Admin Menu Added and you can now change your page permalink link from your WP Admin Area.
+== Upgrade Notice ==
 
-= 1.0.0 =
-* Initial release
+= 1.4.7 =
+In this release, several bugs and some incorrectly translated strings have been fixed.
+
+= 1.4.6 =
+In this release, several bugs and some incorrectly translated strings have been fixed.
+
+= 1.4.5 =
+In this release, several bugs and some incorrectly translated strings have been fixed.
+
+= 1.4.4 =
+In this release, several bugs and some incorrectly translated strings have been fixed also some new settings has been introduced.
+
+= 1.4.3 =
+In this release, some incorrectly translated strings have been fixed.

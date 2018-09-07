@@ -1,0 +1,63 @@
+= 1.4.3 =
+
+* Improved: Uninstall method.
+* Fixed: Incorrectly translated strings.
+* Screenshot update.
+
+= 1.4.2 =
+
+* Added: I18n Support.
+* Added: Option to remove trailing slashes from page permalink structure if slash is included in post permalink structure.
+* Improved: Activation and deactivation method.
+* Improved: Auto rewrite method.
+* Bug Fix.
+
+IMPORTANT NOTE: Please delete the old plugin completely and install this new Version.
+
+= 1.4.1 =
+
+* Improvement: Admin UI.
+* Tweak: Improved Rewrite method on plugin activation and deactivation.
+* Bug Fix.
+
+= 1.4.0 =
+* Bug Fix.
+
+= 1.3.0 =
+* Fix : Page id shows as page paermalink when there is no value in input field.
+
+= 1.2.0 =
+* Code rewrite.
+* Code cleanup.
+
+= 1.1.0 =
+* Compatible with multisite.
+* Introducing auto rewrite method.
+* Minor Changes.
+
+= 1.0.8 =
+* Compatible with WordpPress 4.8.
+
+= 1.0.7 =
+* Minor Chnages.
+
+= 1.0.6 =
+* Tweak in the configuaration.
+
+= 1.0.5 =
+* Bug fix - Hook Updated.
+
+= 1.0.4 =
+* Rename this plugin.
+
+= 1.0.3 =
+* Bug Fix and Performance Improved.
+
+= 1.0.2 =
+* Bug Fix and Performance Improved.
+
+= 1.0.1 =
+* Admin Menu Added and you can now change your page permalink link from your WP Admin Area.
+
+= 1.0.0 =
+* Initial release
