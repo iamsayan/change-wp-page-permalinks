@@ -2,9 +2,9 @@
 Contributors: Infosatech
 Tags: permalink, custom permalink, page permalink, page extension, page url, page permalinks, page
 Requires at least: 3.5
-Tested up to: 4.9
-Stable tag: 1.4.7
-Requires PHP: 5.3
+Tested up to: 5.0
+Stable tag: 1.4.8
+Requires PHP: 5.4
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -29,7 +29,7 @@ This plugin helps to add anything like .html, .php, .aspx, .htm, .asp, .shtml as
 
 #### Compatibility
 
-This plugin is tested with many popular SEO plugins like Yoast SEO, SEOPress etc. and fully compatible with WordPress Version 3.5 and beyond and also compatible with any WordPress theme.
+This plugin is tested with many popular SEO plugins like Yoast SEO, All In One SEO, SEOPress etc. and fully compatible with WordPress Version 3.5 and beyond and also compatible with any WordPress theme.
 
 #### Support
 * Community support via the [support forums](https://wordpress.org/support/plugin/change-wp-page-permalinks) at wordpress.org.
@@ -65,6 +65,10 @@ Open any page of your website and you can see the change.
 2. Page permalink structure after using this plugin.
 
 == Changelog ==
+
+= 1.4.8 =
+
+* Added: Admin notice.
 
 = 1.4.7 =
 

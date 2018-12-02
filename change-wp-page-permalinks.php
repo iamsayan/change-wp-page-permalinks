@@ -3,7 +3,7 @@
  * Plugin Name: WP Page Permalink Extension
  * Plugin URI: https://wordpress.org/plugins/change-wp-page-permalinks/
  * Description: WP Page Permalink Extension plugin will help you to add anything like .html, .php, .aspx, .htm, .asp, .shtml as WordPress Page Extention.
- * Version: 1.4.7
+ * Version: 1.4.8
  * Author: Sayan Datta
  * Author URI: https://profiles.wordpress.org/infosatech/
  * License: GPLv3
@@ -81,7 +81,11 @@ function cwpp_plugin_deactivation() {
 
     if ( ! current_user_can( 'activate_plugins' ) ) {
         return;
-	}
+    }
+    
+    delete_option( 'cwpp_plugin_dismiss_rating_notice' );
+    delete_option( 'cwpp_plugin_no_thanks_rating_notice' );
+    delete_option( 'cwpp_plugin_installed_time' );
 
     $cwpp_settings = get_option( 'cwpp_cus_extension' );
     $cwpp_extension = $cwpp_settings['cwpp_custom_extension'];
@@ -257,6 +261,8 @@ function cwpp_plugin_settings_page() {
     require_once plugin_dir_path( __FILE__ ) . 'admin/settings-page.php';
 }
 
+require_once plugin_dir_path( __FILE__ ) . 'admin/notice.php';
+
 // add action links
 function cwpp_add_action_links ( $links ) {
     $cwpplinks = array(
@@ -267,7 +273,7 @@ function cwpp_add_action_links ( $links ) {
 
 function cwpp_plugin_meta_links( $links, $file ) {
     $plugin = plugin_basename(__FILE__);
-    if ($file == $plugin) // only for this plugin
+    if ( $file == $plugin ) // only for this plugin
         return array_merge( $links, 
             array( '<a href="https://wordpress.org/support/plugin/change-wp-page-permalinks" target="_blank">' . __( 'Support', 'change-wp-page-permalinks' ) . '</a>' ),
             array( '<a href="http://bit.ly/2I0Gj60" target="_blank">' . __( 'Donate', 'change-wp-page-permalinks' ) . '</a>' )
