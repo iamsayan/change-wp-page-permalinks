@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Page Permalink Extension\n"
-"POT-Creation-Date: 2018-09-24 17:31+0530\n"
-"PO-Revision-Date: 2018-09-24 17:31+0530\n"
+"POT-Creation-Date: 2018-12-09 00:18+0530\n"
+"PO-Revision-Date: 2018-12-09 00:17+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,37 +41,53 @@ msgstr ""
 msgid "Nope&#44; maybe later"
 msgstr ""
 
-#: admin/settings-fields.php:17
+#: admin/settings-fields.php:18
 msgid ""
 "Set custom page permalink here. Currently page permalink structure of this "
 "website is"
 msgstr ""
 
-#: admin/settings-fields.php:33
+#: admin/settings-fields.php:28
+msgid "Pages"
+msgstr ""
+
+#: admin/settings-fields.php:31
+msgid "Static Posts Page"
+msgstr ""
+
+#: admin/settings-fields.php:34
 msgid "Select on which page you want to remove trailing slashes automatically."
 msgstr ""
 
-#: admin/settings-fields.php:41
-msgid "For Advanced Users only"
+#: admin/settings-fields.php:42
+msgid "Yes, rewrite slug"
 msgstr ""
 
 #: admin/settings-fields.php:42
+msgid "For advanced users only"
+msgstr ""
+
+#: admin/settings-fields.php:43
 msgid ""
 "Set custom slug for your static posts page, if you want to set custom page "
 "slug for static posts page. This will add rewrite rules to make accessible "
 "static post page using custom slug. Be sure what you are doing!"
 msgstr ""
 
-#: admin/settings-fields.php:73
+#: admin/settings-fields.php:78
 msgid "Add Traling Slash?"
 msgstr ""
 
-#: admin/settings-fields.php:77
+#: admin/settings-fields.php:82
+msgid "Enable 301 Redirect?"
+msgstr ""
+
+#: admin/settings-fields.php:83
 msgid "View"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: admin/settings-page.php:14 change-wp-page-permalinks.php:237
+#: admin/settings-page.php:14 change-wp-page-permalinks.php:242
 msgid "WP Page Permalink Extension"
 msgstr ""
 
@@ -91,47 +107,51 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: admin/settings-page.php:29
-msgid "Flush Permalinks"
+#: admin/settings-page.php:30
+msgid "Regenerate Permalinks"
 msgstr ""
 
-#: admin/settings-page.php:29
-msgid "Save Changes first before flushing permalinks!"
+#: admin/settings-page.php:31
+msgid "Save Changes first, before regenerating permalinks!"
 msgstr ""
 
-#: change-wp-page-permalinks.php:215
+#: admin/settings-page.php:40
+msgid "Regenerating..."
+msgstr ""
+
+#: change-wp-page-permalinks.php:220
 msgid "Custom Permalink for Pages:"
 msgstr ""
 
-#: change-wp-page-permalinks.php:218
+#: change-wp-page-permalinks.php:223
 msgid "Auto Escape Trailing Slashes on:"
 msgstr ""
 
-#: change-wp-page-permalinks.php:222
+#: change-wp-page-permalinks.php:227
 msgid "Rewrite Static Posts Page Slug?"
 msgstr ""
 
-#: change-wp-page-permalinks.php:223
+#: change-wp-page-permalinks.php:228
 msgid "Custom Slug for Posts Page:"
 msgstr ""
 
-#: change-wp-page-permalinks.php:237
+#: change-wp-page-permalinks.php:242
 msgid "WP Page Permalink"
 msgstr ""
 
-#: change-wp-page-permalinks.php:258
+#: change-wp-page-permalinks.php:260
 msgid "Permalink structure updated."
 msgstr ""
 
-#: change-wp-page-permalinks.php:269
+#: change-wp-page-permalinks.php:275
 msgid "Settings"
 msgstr ""
 
-#: change-wp-page-permalinks.php:278
+#: change-wp-page-permalinks.php:284
 msgid "Support"
 msgstr ""
 
-#: change-wp-page-permalinks.php:279
+#: change-wp-page-permalinks.php:285
 msgid "Donate"
 msgstr ""
 

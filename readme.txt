@@ -3,7 +3,7 @@ Contributors: Infosatech
 Tags: permalink, custom permalink, page permalink, page extension, page url, page permalinks, page
 Requires at least: 3.5
 Tested up to: 5.0
-Stable tag: 1.4.8
+Stable tag: 1.5.0
 Requires PHP: 5.4
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
@@ -66,37 +66,12 @@ Open any page of your website and you can see the change.
 
 == Changelog ==
 
-= 1.4.8 =
+= 1.5.0 =
 
-* Added: Admin notice.
-
-= 1.4.7 =
-
-* Improved: Added a confirmation chcekbox for Static Posts Page Slug rewrite process.
-* Bug fixed.
-
-= 1.4.6 =
-
-* Tweak: now it is possible to add trailing slash only to static posts page even trailing slash has not already been included in WordPress permalink structure.
-* Fixed: Incorrectly translated strings.
-
-= 1.4.5 =
-
-* Tweak: default static posts page URL will be replaced with custom static page structure.
-* Improved: static posts page detection mechanism.
-* Improved: trailing slashing system.
-* Fixed: now custom static page URL is also showing in the sitemap file of SEO plugins.
-
-= 1.4.4 =
-
-* Added: an option to set custom permalink for static posts page.
-* Added: an option to remove trailing slashes from static post pages also.
-* Introduced: Flush Rules button to regenerate permalink structure from plugin settings page.
-* Improved: auto escape unwanted character from page permalink structure.
-* Tweak: now plugin option's visibility depends on WordPress permalink structure.
-* Fixed: a bug where `flush rewrite rules()` runs every time.
-* Fixed: Incorrectly translated strings.
-* Admin UI improved.
+* Added: 301 Redirect if 'rewrite static posts page slug' is enabled.
+* Improved: Rewrite mechanism.
+* Fixed: an undefined index notice.
+* Compatible with WordPress 5.0.
 
 = Other Versions =
 
@@ -106,15 +81,3 @@ Open any page of your website and you can see the change.
 
 = 1.4.7 =
 In this release, several bugs and some incorrectly translated strings have been fixed.
-
-= 1.4.6 =
-In this release, several bugs and some incorrectly translated strings have been fixed.
-
-= 1.4.5 =
-In this release, several bugs and some incorrectly translated strings have been fixed.
-
-= 1.4.4 =
-In this release, several bugs and some incorrectly translated strings have been fixed also some new settings has been introduced.
-
-= 1.4.3 =
-In this release, some incorrectly translated strings have been fixed.

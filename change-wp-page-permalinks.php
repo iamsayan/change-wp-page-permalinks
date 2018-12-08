@@ -3,7 +3,7 @@
  * Plugin Name: WP Page Permalink Extension
  * Plugin URI: https://wordpress.org/plugins/change-wp-page-permalinks/
  * Description: WP Page Permalink Extension plugin will help you to add anything like .html, .php, .aspx, .htm, .asp, .shtml as WordPress Page Extention.
- * Version: 1.4.8
+ * Version: 1.5.0
  * Author: Sayan Datta
  * Author URI: https://profiles.wordpress.org/infosatech/
  * License: GPLv3
@@ -150,6 +150,7 @@ if ( isset($cwpp_settings['cwpp_add_rewrite_rule_cb']) && ($cwpp_settings['cwpp_
 
 function cwpp_filter_static_permalink( $permalink, $post_id ) {
 
+    global $wp_rewrite;
     $cwpp_settings = get_option('cwpp_cus_extension');
     $page_id = get_option( 'page_for_posts' );
 
@@ -157,10 +158,12 @@ function cwpp_filter_static_permalink( $permalink, $post_id ) {
 
     $cwpp_slug = $cwpp_settings['cwpp_add_rewrite_rule'];
 
-    if( isset( $cwpp_settings['cwpp_hidden_static_cb']) && ($cwpp_settings['cwpp_hidden_static_cb'] == 1 ) || isset($cwpp_settings['cwpp_auto_add_slash']) && ($cwpp_settings['cwpp_auto_add_slash'] == 1) ) {
-        $cwpp_blog_url = $cwpp_slug . '/';
-    } else {
-        $cwpp_blog_url = str_replace( '/', '', $cwpp_slug );
+    $cwpp_new_url = $cwpp_slug . '/';
+    if( isset( $cwpp_settings['cwpp_auto_escape_slash_static_cb']) && ($cwpp_settings['cwpp_auto_escape_slash_static_cb'] == 1 ) || ( $wp_rewrite->using_permalinks() && $wp_rewrite->use_trailing_slashes == false ) ) {
+        $cwpp_new_url = str_replace( '/', '', $cwpp_slug );
+    }
+    if( $wp_rewrite->using_permalinks() && $wp_rewrite->use_trailing_slashes == false && isset( $cwpp_settings['cwpp_auto_add_slash']) && ($cwpp_settings['cwpp_auto_add_slash'] == 1 ) ) {
+        $cwpp_new_url = $cwpp_slug . '/';
     }
     
     if ( empty( $post_id ) ) return $permalink;
@@ -168,7 +171,7 @@ function cwpp_filter_static_permalink( $permalink, $post_id ) {
     $post = get_post( $post_id );
 
     if( $post->ID == $page_id ) {
-        return home_url( $cwpp_blog_url );
+        return home_url( $cwpp_new_url );
     }
     return $permalink;
 }
@@ -201,6 +204,8 @@ function cwpp_no_page_trailing_slash( $string, $type ) {
 
 add_filter( 'user_trailingslashit', 'cwpp_no_page_trailing_slash', 66, 2 );
 
+require_once plugin_dir_path( __FILE__ ) . 'admin/redirect.php';
+
 // register settings
 add_action( 'admin_init', 'cwpp_register_plugin_settings' );
 
@@ -224,7 +229,7 @@ function cwpp_register_plugin_settings() {
     }
     
     //register settings
-	register_setting( 'cwpp-plugin-settings-group', 'cwpp_cus_extension' );
+    register_setting( 'cwpp_plugin_settings_fields', 'cwpp_cus_extension' );
 }
 
 require_once plugin_dir_path( __FILE__ ) . 'admin/settings-fields.php';
@@ -248,16 +253,17 @@ function cwpp_load_admin_css() {
 add_action( 'admin_enqueue_scripts', 'cwpp_load_admin_css' );
 
 function cwpp_plugin_settings_page() { 
-    // get plugin option
-    $cwpp_settings = get_option( 'cwpp_cus_extension' ); 
-    global $wp_rewrite;
     
     if ( isset( $_POST['cwpp_submit'] ) && $_POST['cwpp_submit'] == 'yes' ) {
         flush_rewrite_rules();
         echo '<div id="message" class="notice notice-success is-dismissible">';
 			echo '<p><strong>' . __( 'Permalink structure updated.', 'change-wp-page-permalinks' ) . '</strong></p>';
 		echo '</div>';
-	}
+    }
+    
+    $cwpp_settings = get_option( 'cwpp_cus_extension' ); 
+    global $wp_rewrite;
+
     require_once plugin_dir_path( __FILE__ ) . 'admin/settings-page.php';
 }
 

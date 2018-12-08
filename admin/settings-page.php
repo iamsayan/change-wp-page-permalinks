@@ -24,20 +24,23 @@
                     </h3>
                     <div class="inside">
                         <form id="saveForm" method="post" action="options.php">
-                            <?php settings_fields( 'cwpp-plugin-settings-group' ); ?>
+                            <?php settings_fields( 'cwpp_plugin_settings_fields' ); ?>
                             <?php do_settings_sections( 'cwpp_plugin_option' ); ?>
-                            <p><?php submit_button( __( 'Save Changes', 'change-wp-page-permalinks' ), 'primary save-settings', '', false ); ?>&nbsp;&nbsp;<input type="submit" name="submit" id="submit" class="button flush-rules" form="flushRules" value="<?php _e( 'Flush Permalinks', 'change-wp-page-permalinks' ); ?>" />&nbsp;<span class="spinner is-active" style="float: none;margin: -2px 5px 0; display:none;"></span>&nbsp;&nbsp;<small><?php _e( 'Save Changes first before flushing permalinks!', 'change-wp-page-permalinks' ); ?></small></p>
+                            <p><?php submit_button( __( 'Save Changes', 'change-wp-page-permalinks' ), 'primary save-settings', '', false ); ?>
+                            &nbsp;&nbsp;<input type="submit" name="submit" id="submit" class="button flush-rules" form="flushRules" value="<?php _e( 'Regenerate Permalinks', 'change-wp-page-permalinks' ); ?>" />&nbsp;<span class="spinner is-active" style="float: none;margin: -2px 5px 0; display:none;"></span>
+                            &nbsp;&nbsp;<span style="font-size:12px;"><?php _e( 'Save Changes first, before regenerating permalinks!', 'change-wp-page-permalinks' ); ?></p>
                         </form>
                         <form id="flushRules" method="post" action="">
                             <input id="cwpp-submit" name="cwpp_submit" type="hidden" value="yes"/>
                         </form>
                         <script>
                             jQuery(document).ready(function ($) {
-                                $('.flush-rules').click(function () {
-                                    $(".flush-rules").addClass("button-large disabled");
+                                $('.flush-rules').click(function() {
+                                    $(".flush-rules").addClass("disabled");
+                                    $(".flush-rules").val("<?php _e( 'Regenerating...', 'change-wp-page-permalinks' ); ?>");
                                     $(".spinner").show();
                                 });
-                                $("#rewrite-rule").change(function () {
+                                $("#rewrite-rule").change(function() {
                                     if ($('#rewrite-rule').is(':checked')) {
                                         $('.custom-rule').show();
                                         $('#rule').attr('required', 'required');
@@ -48,21 +51,11 @@
                                     }
                                 });
                                 $("#rewrite-rule").trigger('change');
-                                $("#static-page").change(function () {
-                                    if ($('#static-page').is(':checked')) {
-                                        $('#static-hidden').val('0');
-                                    }
-                                    if (!$('#static-page').is(':checked')) {
-                                        $('#static-hidden').val('1');
-                                    }
-                                });
-                                $("#static-page").trigger('change');
                             });
                         </script>
-                        <br>
-                        <span>
-                            Developed with <span style="color:#e25555;">♥</span> by <a href="https://profiles.wordpress.org/infosatech/" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">Support</a> | <a href="http://bit.ly/2I0Gj60" target="_blank" style="font-weight: 500;">Donate</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?rate=5#new-post" target="_blank" style="font-weight: 500;">Rate it</a> (<span style="color:#ffa000;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>), if you like this plugin. Thank You!
-                        </span>
+                        <p id="major-publishing-actions" style="border-top:none !important;">
+                            Developed with <span style="color:#e25555;">♥</span> by <a href="https://profiles.wordpress.org/infosatech/" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">Support</a> | <a href="http://bit.ly/2I0Gj60" target="_blank" style="font-weight: 500;">Donate</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?rate=5#new-post" target="_blank" style="font-weight: 500;">Rate it</a> (<span style="color:#ffa000;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>) on WordPress.org, if you like this plugin. Thank You!
+                        </p>
                     </div>
                 </div>
             </div>

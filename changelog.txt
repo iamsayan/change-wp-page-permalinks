@@ -1,3 +1,35 @@
+= 1.4.8 =
+
+* Added: Admin notice.
+
+= 1.4.7 =
+
+* Improved: Added a confirmation chcekbox for Static Posts Page Slug rewrite process.
+* Bug fixed.
+
+= 1.4.6 =
+
+* Tweak: now it is possible to add trailing slash only to static posts page even trailing slash has not already been included in WordPress permalink structure.
+* Fixed: Incorrectly translated strings.
+
+= 1.4.5 =
+
+* Tweak: default static posts page URL will be replaced with custom static page structure.
+* Improved: static posts page detection mechanism.
+* Improved: trailing slashing system.
+* Fixed: now custom static page URL is also showing in the sitemap file of SEO plugins.
+
+= 1.4.4 =
+
+* Added: an option to set custom permalink for static posts page.
+* Added: an option to remove trailing slashes from static post pages also.
+* Introduced: Flush Rules button to regenerate permalink structure from plugin settings page.
+* Improved: auto escape unwanted character from page permalink structure.
+* Tweak: now plugin option's visibility depends on WordPress permalink structure.
+* Fixed: a bug where `flush rewrite rules()` runs every time.
+* Fixed: Incorrectly translated strings.
+* Admin UI improved.
+
 = 1.4.3 =
 
 * Improved: Uninstall method.
