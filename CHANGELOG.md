@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+##  1.5.0
+
+* Added: 301 Redirect if 'rewrite static posts page slug' is enabled.
+* Improved: Rewrite mechanism.
+* Fixed: an undefined index notice.
+* Compatible with WordPress 5.0.
+
 ## 1.4.8
 
 * Added: Admin notice.
