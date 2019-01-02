@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Page Permalink Extension\n"
-"POT-Creation-Date: 2018-12-09 00:18+0530\n"
-"PO-Revision-Date: 2018-12-09 00:17+0530\n"
+"POT-Creation-Date: 2019-01-02 20:33+0530\n"
+"PO-Revision-Date: 2019-01-02 20:33+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -86,72 +86,68 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-#: admin/settings-page.php:14 change-wp-page-permalinks.php:242
-msgid "WP Page Permalink Extension"
-msgstr ""
-
-#: admin/settings-page.php:14
-msgid "Ver"
-msgstr ""
-
-#: admin/settings-page.php:15
+#: admin/settings-page.php:16
 msgid "Customize wordpress page permalink structure very easily."
 msgstr ""
 
-#: admin/settings-page.php:22
+#: admin/settings-page.php:28
 msgid "Configure Settings"
 msgstr ""
 
-#: admin/settings-page.php:29
+#: admin/settings-page.php:35
 msgid "Save Changes"
 msgstr ""
 
-#: admin/settings-page.php:30
+#: admin/settings-page.php:36
 msgid "Regenerate Permalinks"
 msgstr ""
 
-#: admin/settings-page.php:31
+#: admin/settings-page.php:37
 msgid "Save Changes first, before regenerating permalinks!"
 msgstr ""
 
-#: admin/settings-page.php:40
+#: admin/settings-page.php:46
 msgid "Regenerating..."
 msgstr ""
 
-#: change-wp-page-permalinks.php:220
+#: change-wp-page-permalinks.php:135
 msgid "Custom Permalink for Pages:"
 msgstr ""
 
-#: change-wp-page-permalinks.php:223
+#: change-wp-page-permalinks.php:138
 msgid "Auto Escape Trailing Slashes on:"
 msgstr ""
 
-#: change-wp-page-permalinks.php:227
+#: change-wp-page-permalinks.php:142
 msgid "Rewrite Static Posts Page Slug?"
 msgstr ""
 
-#: change-wp-page-permalinks.php:228
+#: change-wp-page-permalinks.php:143
 msgid "Custom Slug for Posts Page:"
 msgstr ""
 
-#: change-wp-page-permalinks.php:242
+#. Plugin Name of the plugin/theme
+#: change-wp-page-permalinks.php:157
+msgid "WP Page Permalink Extension"
+msgstr ""
+
+#: change-wp-page-permalinks.php:157
 msgid "WP Page Permalink"
 msgstr ""
 
-#: change-wp-page-permalinks.php:260
+#: change-wp-page-permalinks.php:165
 msgid "Permalink structure updated."
 msgstr ""
 
-#: change-wp-page-permalinks.php:275
+#: change-wp-page-permalinks.php:180
 msgid "Settings"
 msgstr ""
 
-#: change-wp-page-permalinks.php:284
+#: change-wp-page-permalinks.php:189
 msgid "Support"
 msgstr ""
 
-#: change-wp-page-permalinks.php:285
+#: change-wp-page-permalinks.php:190
 msgid "Donate"
 msgstr ""
 

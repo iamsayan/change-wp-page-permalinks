@@ -3,7 +3,7 @@
  * Plugin Name: WP Page Permalink Extension
  * Plugin URI: https://wordpress.org/plugins/change-wp-page-permalinks/
  * Description: WP Page Permalink Extension plugin will help you to add anything like .html, .php, .aspx, .htm, .asp, .shtml as WordPress Page Extention.
- * Version: 1.5.0
+ * Version: 1.5.1
  * Author: Sayan Datta
  * Author URI: https://profiles.wordpress.org/infosatech/
  * License: GPLv3
@@ -35,6 +35,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+define ( 'CWPP_PLUGIN_VERSION', '1.5.1' );
+
 // Internationalization
 add_action( 'plugins_loaded', 'cwpp_plugin_load_textdomain' );
 /**
@@ -46,28 +48,22 @@ function cwpp_plugin_load_textdomain() {
     load_plugin_textdomain( 'change-wp-page-permalinks', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
 }
 
-function cwpp_print_version() {
-    // fetch plugin version
-    $cwpppluginfo = get_plugin_data(__FILE__);
-    $cwppversion = $cwpppluginfo['Version'];    
-    return $cwppversion;
-}
+// register activation hook
+register_activation_hook( __FILE__, 'cwpp_plugin_activation' );
+// register deactivation hook
+register_deactivation_hook( __FILE__, 'cwpp_plugin_deactivation' );
 
 function cwpp_plugin_activation() {
 
     global $wp_rewrite;
-
     if ( ! current_user_can( 'activate_plugins' ) ) {
         return;
 	}
-
     $cwpp_settings = get_option( 'cwpp_cus_extension' );
     $cwpp_extension = $cwpp_settings['cwpp_custom_extension'];
 
     if ( !empty( $cwpp_extension ) ) {
-
         $cwpp_extension = preg_replace( '#/+#', '/', '/' . str_replace( '#', '', $cwpp_extension ) );
-
         if ( strpos( $wp_rewrite->get_page_permastruct(), $cwpp_extension ) === false  ) {
             $wp_rewrite->page_structure = $wp_rewrite->root . $cwpp_extension;
             flush_rewrite_rules();
@@ -78,7 +74,6 @@ function cwpp_plugin_activation() {
 function cwpp_plugin_deactivation() {
 
     global $wp_rewrite;
-
     if ( ! current_user_can( 'activate_plugins' ) ) {
         return;
     }
@@ -89,122 +84,42 @@ function cwpp_plugin_deactivation() {
 
     $cwpp_settings = get_option( 'cwpp_cus_extension' );
     $cwpp_extension = $cwpp_settings['cwpp_custom_extension'];
-
     if ( !empty( $cwpp_extension ) ) {
-
         $wp_rewrite->page_structure = $wp_rewrite->root . '%pagename%';
         flush_rewrite_rules();
     }
-
-    // debug
-    //$plugin_option = 'cwpp_cus_extension';
-    //delete_option( $plugin_option );
 }
-
-// register activation hook
-register_activation_hook( __FILE__, 'cwpp_plugin_activation' );
-// register deactivation hook
-register_deactivation_hook( __FILE__, 'cwpp_plugin_deactivation' );
 
 add_action( 'init', 'cwpp_enable_custom_page_ext', -1 );
 
 function cwpp_enable_custom_page_ext() {
 
     global $wp_rewrite;
-
     $cwpp_settings = get_option( 'cwpp_cus_extension' );
     $cwpp_extension = $cwpp_settings['cwpp_custom_extension'];
-
     if ( !empty( $cwpp_extension ) ) {
-
         $cwpp_extension = preg_replace( '#/+#', '/', '/' . str_replace( '#', '', $cwpp_extension ) );
-
         if ( strpos( $wp_rewrite->get_page_permastruct(), $cwpp_extension ) === false ) {
             $wp_rewrite->page_structure = $wp_rewrite->root . $cwpp_extension;
         }
     }
-   
 }
 
 $cwpp_settings = get_option('cwpp_cus_extension');
 
-function cwpp_custom_rewrite_rule() {
+require_once plugin_dir_path( __FILE__ ) . 'includes/redirect.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/rewrite.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/trailing-slash.php';
 
-    $cwpp_settings = get_option('cwpp_cus_extension');
-    $page_id = get_option( 'page_for_posts' );
+add_action( 'admin_enqueue_scripts', 'cwpp_load_admin_css' );
 
-    if ( 'page' != get_option( 'show_on_front' ) ) return;
-
-    $cwpp_slug = $cwpp_settings['cwpp_add_rewrite_rule'];
-    $cwpp_blog_url = str_replace( '/', '', $cwpp_slug );
-
-    add_rewrite_rule( '^'. $cwpp_blog_url .'/?$', 'index.php?page_id=$matches['. $page_id .']', 'top');
-    add_rewrite_rule( '^'. $cwpp_blog_url .'/page/([0-9]+)/?$', 'index.php?page_id=$matches['. $page_id .']&paged=$matches[1]', 'top');
+function cwpp_load_admin_css() {
+    // get current screen
+    $current_screen = get_current_screen();
+    if ( strpos( $current_screen->base, 'wp-page-permalink-extension') !== false ) {
+        wp_enqueue_style( 'cwpp_styles', plugins_url( 'admin/css/admin.min.css', __FILE__ ), array(), CWPP_PLUGIN_VERSION );
+    }
 }
-
-if ( isset($cwpp_settings['cwpp_add_rewrite_rule_cb']) && ($cwpp_settings['cwpp_add_rewrite_rule_cb'] == 1 ) && !empty( $cwpp_settings['cwpp_add_rewrite_rule'] ) ) {
-    
-    add_action('init', 'cwpp_custom_rewrite_rule');
-    add_filter('page_link', 'cwpp_filter_static_permalink', 10, 2); 
-}
-
-function cwpp_filter_static_permalink( $permalink, $post_id ) {
-
-    global $wp_rewrite;
-    $cwpp_settings = get_option('cwpp_cus_extension');
-    $page_id = get_option( 'page_for_posts' );
-
-    if ( 'page' != get_option( 'show_on_front' ) ) return $permalink;
-
-    $cwpp_slug = $cwpp_settings['cwpp_add_rewrite_rule'];
-
-    $cwpp_new_url = $cwpp_slug . '/';
-    if( isset( $cwpp_settings['cwpp_auto_escape_slash_static_cb']) && ($cwpp_settings['cwpp_auto_escape_slash_static_cb'] == 1 ) || ( $wp_rewrite->using_permalinks() && $wp_rewrite->use_trailing_slashes == false ) ) {
-        $cwpp_new_url = str_replace( '/', '', $cwpp_slug );
-    }
-    if( $wp_rewrite->using_permalinks() && $wp_rewrite->use_trailing_slashes == false && isset( $cwpp_settings['cwpp_auto_add_slash']) && ($cwpp_settings['cwpp_auto_add_slash'] == 1 ) ) {
-        $cwpp_new_url = $cwpp_slug . '/';
-    }
-    
-    if ( empty( $post_id ) ) return $permalink;
-
-    $post = get_post( $post_id );
-
-    if( $post->ID == $page_id ) {
-        return home_url( $cwpp_new_url );
-    }
-    return $permalink;
-}
-
-function cwpp_no_page_trailing_slash( $string, $type ) {
-
-    global $wp_rewrite;
-    $cwpp_settings = get_option('cwpp_cus_extension');
-
-    if( isset($cwpp_settings['cwpp_auto_escape_slash_page_cb']) && ($cwpp_settings['cwpp_auto_escape_slash_page_cb'] == 1 ) ) {
-        if ( $wp_rewrite->using_permalinks() && $wp_rewrite->use_trailing_slashes == true  && $type == 'page' ) {
-            return untrailingslashit( $string );
-        }
-    }
-    
-    if( isset($cwpp_settings['cwpp_auto_escape_slash_static_cb']) && ($cwpp_settings['cwpp_auto_escape_slash_static_cb'] == 1 ) ) {
-        if( $wp_rewrite->using_permalinks() && $wp_rewrite->use_trailing_slashes == true && $type == 'home' ) {
-            return untrailingslashit( $string );
-        }
-    }
-    
-    if( isset($cwpp_settings['cwpp_add_rewrite_rule_cb']) && ($cwpp_settings['cwpp_add_rewrite_rule_cb'] == 1 ) && !empty( $cwpp_settings['cwpp_add_rewrite_rule'] ) && isset($cwpp_settings['cwpp_auto_add_slash']) && ($cwpp_settings['cwpp_auto_add_slash'] == 1) ) {
-        if( $wp_rewrite->using_permalinks() && $wp_rewrite->use_trailing_slashes == false && $type == 'home' ) {
-            return trailingslashit( $string );
-        }
-    }
-    
-    return $string;
-}
-
-add_filter( 'user_trailingslashit', 'cwpp_no_page_trailing_slash', 66, 2 );
-
-require_once plugin_dir_path( __FILE__ ) . 'admin/redirect.php';
 
 // register settings
 add_action( 'admin_init', 'cwpp_register_plugin_settings' );
@@ -241,16 +156,6 @@ function cwpp_admin_menu() {
     //Add admin menu option
     add_submenu_page( 'options-general.php', __( 'WP Page Permalink Extension', 'change-wp-page-permalinks' ), __( 'WP Page Permalink', 'change-wp-page-permalinks' ), 'manage_options', 'wp-page-permalink-extension', 'cwpp_plugin_settings_page' );
 }
-
-function cwpp_load_admin_css() {
-    // get current screen
-    $current_screen = get_current_screen();
-    if ( strpos( $current_screen->base, 'wp-page-permalink-extension') !== false ) {
-        wp_enqueue_style( 'cwpp_styles', plugins_url( 'admin/css/admin.min.css', __FILE__ ), array(), cwpp_print_version() );
-    }
-}
-
-add_action( 'admin_enqueue_scripts', 'cwpp_load_admin_css' );
 
 function cwpp_plugin_settings_page() { 
     
