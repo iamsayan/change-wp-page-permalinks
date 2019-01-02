@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.5.1
+
+* Improved: Admin UI.
+* Fixed: an undefined index notice.
+
 ##  1.5.0
 
 * Added: 301 Redirect if 'rewrite static posts page slug' is enabled.
