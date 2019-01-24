@@ -13,7 +13,6 @@ function cwpp_custom_extension_display() {
     
     global $wp_rewrite;
     $cwpp_settings = get_option('cwpp_cus_extension');
-
     ?> <code><?php echo get_site_url() ?></code><input id="extension" name="cwpp_cus_extension[cwpp_custom_extension]" type="text" size="40" required style="width:40%;" placeholder="/pages/%pagename%.html" value="<?php if (isset($cwpp_settings['cwpp_custom_extension'])) { echo $wp_rewrite->get_page_permastruct(); } ?>" />
     &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Set custom page permalink here. Currently page permalink structure of this website is', 'change-wp-page-permalinks' ); ?> <?php echo $wp_rewrite->get_page_permastruct(); ?>."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
@@ -39,7 +38,7 @@ function cwpp_add_rewrite_rule_cb_display() {
 
     $cwpp_settings = get_option('cwpp_cus_extension');
 
-    ?> <input type="checkbox" id="rewrite-rule" name="cwpp_cus_extension[cwpp_add_rewrite_rule_cb]" value="1" <?php checked(isset($cwpp_settings['cwpp_add_rewrite_rule_cb']), 1); ?> /><?php _e( 'Yes, rewrite slug', 'change-wp-page-permalinks' ); ?>&nbsp;<span style="font-size:12px;">(<?php _e( 'For advanced users only', 'change-wp-page-permalinks' ); ?>)</span>
+    ?> <input type="checkbox" id="rewrite-rule" name="cwpp_cus_extension[cwpp_add_rewrite_rule_cb]" value="1" <?php checked(isset($cwpp_settings['cwpp_add_rewrite_rule_cb']), 1); ?> /><label for="rewrite-rule" style="font-size:12px;"><?php _e( 'Yes, rewrite slug', 'change-wp-page-permalinks' ); ?> (<?php _e( 'For advanced users only', 'change-wp-page-permalinks' ); ?>)</label>
     &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Set custom slug for your static posts page, if you want to set custom page slug for static posts page. This will add rewrite rules to make accessible static post page using custom slug. Be sure what you are doing!', 'change-wp-page-permalinks' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
@@ -79,7 +78,7 @@ function cwpp_add_rewrite_rule_display() {
             <?php 
         } ?> 
 
-        &nbsp;&nbsp;<label for="enable-redirect"><input type="checkbox" id="enable-redirect" name="cwpp_cus_extension[cwpp_enable_auto_redirect]" value="1" <?php checked(isset($cwpp_settings['cwpp_enable_auto_redirect']), 1); ?> /><span style="font-size:12px;"><?php _e( 'Enable 301 Redirect?', 'change-wp-page-permalinks' ); ?></span></label>
+        &nbsp;&nbsp;<input type="checkbox" id="enable-redirect" name="cwpp_cus_extension[cwpp_enable_auto_redirect]" value="1" <?php checked(isset($cwpp_settings['cwpp_enable_auto_redirect']), 1); ?> /><label for="enable-redirect" style="font-size:12px;"><?php _e( 'Enable 301 Redirect?', 'change-wp-page-permalinks' ); ?></label>
         &nbsp;<a href="<?php echo get_home_url().'/'.$cwpp_new_url; ?>" target="_blank"><small><?php _e( 'View', 'change-wp-page-permalinks' ); ?></small></a>
         <?php
     } 

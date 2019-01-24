@@ -69,24 +69,24 @@
                 <div class="coffee-box">
                     <div class="coffee-amt-wrap">
                         <p><select class="coffee-amt">
-                            <option value="2usd">$2</option>
-                            <option value="3usd">$3</option>
-                            <option value="4usd">$4</option>
-                            <option value="5usd" selected="selected">$5</option>
+                            <option value="5usd">$5</option>
                             <option value="6usd">$6</option>
                             <option value="7usd">$7</option>
                             <option value="8usd">$8</option>
                             <option value="9usd">$9</option>
-                            <option value="10usd">$10</option>
+                            <option value="10usd" selected="selected">$10</option>
                             <option value="11usd">$11</option>
                             <option value="12usd">$12</option>
-                            <option value="">Custom</option>
+                            <option value="13usd">$13</option>
+                            <option value="14usd">$14</option>
+                            <option value="15usd">$15</option>
+                            <option value=""><?php _e( 'Custom', 'change-wp-page-permalinks' ); ?></option>
                         </select></p>
-                        <a class="button button-primary buy-coffee-btn" href="https://www.paypal.me/iamsayan/5usd" data-link="https://www.paypal.me/iamsayan/" target="_blank">Buy me a coffee!</a>
+                        <a class="button button-primary buy-coffee-btn" href="https://www.paypal.me/iamsayan/10usd" data-link="https://www.paypal.me/iamsayan/" target="_blank">Buy me a coffee!</a>
                     </div>
-                    <span class="coffee-heading">Buy me a coffee!</span>
-                    <p style="text-align: justify;">Thank you for using <strong>WP Page Permalink Extension v<?php echo CWPP_PLUGIN_VERSION ?></strong>. If you found the plugin useful buy me a coffee! Your donation will motivate and make me happy for all the efforts. You can donate via PayPal.</p>
-                    <p style="text-align: justify; font-size: 12px; font-style: italic;">Developed with <span style="color:#e25555;">♥</span> by <a href="https://profiles.wordpress.org/infosatech/" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://github.com/iamsayan/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">GitHub</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">Support</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?filter=5#new-post" target="_blank" style="font-weight: 500;">Rate it</a> (<span style="color:#ffa000;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>) on WordPress.org, if you like this plugin.</p>
+                    <span class="coffee-heading"><?php _e( 'Buy me a coffee!', 'change-wp-page-permalinks' ); ?></span>
+                    <p style="text-align: justify;"><?php printf( __( 'Thank you for using %s. If you found the plugin useful buy me a coffee! Your donation will motivate and make me happy for all the efforts. You can donate via PayPal.', 'change-wp-page-permalinks' ), '<strong>WP Page Permalink Extension v' . CWPP_PLUGIN_VERSION . '</strong>' ); ?></strong></p>
+                    <p style="text-align: justify; font-size: 12px; font-style: italic;">Developed with <span style="color:#e25555;">♥</span> by <a href="https://www.sayandatta.com" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://github.com/iamsayan/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">GitHub</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">Support</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?filter=5#new-post" target="_blank" style="font-weight: 500;">Rate it</a> (<span style="color:#ffa000;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>) on WordPress.org, if you like this plugin.</p>
                 </div>
             </div>
             <div id="postbox-container-1" class="postbox-container">
@@ -97,7 +97,7 @@
                             <span class="dashicons dashicons-clock"></span>
                             <label>
                                 <strong><a href="https://wordpress.org/plugins/wp-last-modified-info/" target="_blank">WP Last Modified Info</a>: </strong>
-                                Display last updated info on posts and pages with 'dateModified' Schema Markup.
+                                <?php _e( 'Display last updated info on posts and pages with \'dateModified\' Schema Markup.', 'change-wp-page-permalinks' ); ?>
                             </label>
                         </div>
                         <hr>
@@ -105,7 +105,15 @@
                             <span class="dashicons dashicons-admin-comments"></span>
                             <label>
                                 <strong><a href="https://wordpress.org/plugins/ultimate-facebook-comments/" target="_blank">Ultimate Facebook Comments</a>: </strong>
-                                Ultimate Facebook Comment Solution with instant email notification.
+                                <?php _e( 'Ultimate Facebook Comment Solution with instant email notification.', 'change-wp-page-permalinks' ); ?>
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="misc-pub-section">
+                            <span class="dashicons dashicons-migrate"></span>
+                            <label>
+                                <strong><a href="https://wordpress.org/plugins/fb-account-kit-login/" target="_blank">Facebook Account Kit</a>: </strong>
+                                <?php _e( 'Easily login or register to wordpress by using SMS or Email without any password.', 'change-wp-page-permalinks' ); ?>
                             </label>
                         </div>
                         <hr>
@@ -113,7 +121,7 @@
                             <span class="dashicons dashicons-megaphone"></span>
                             <label>
                                 <strong><a href="https://wordpress.org/plugins/simple-posts-ticker/" target="_blank">Simple Posts Ticker</a>: </strong>
-                                Simple Posts Ticker is a small tool that shows your most recent posts in a marquee style.
+                                <?php _e( 'Simple Posts Ticker is a small tool that shows your most recent posts in a marquee style.', 'change-wp-page-permalinks' ); ?>
                             </label>
                         </div>
                         <hr>
@@ -121,7 +129,7 @@
                             <span class="dashicons dashicons-admin-generic"></span>
                             <label>
                                 <strong><a href="https://wordpress.org/plugins/wp-auto-republish/" target="_blank">WP Auto Republish</a>: </strong>
-                                Automatically republish you old evergreen content to grab better SEO.
+                                <?php _e( 'Automatically republish you old evergreen content to grab better SEO.', 'change-wp-page-permalinks' ); ?>
                             </label>
                         </div>
                         <hr>
@@ -129,7 +137,7 @@
                             <span class="dashicons dashicons-admin-generic"></span>
                             <label>
                                 <strong><a href="https://wordpress.org/plugins/remove-wp-meta-tags/" target="_blank">Easy Header Footer</a>: </strong>
-                                Customize WP header, add custom code and enable, disable or remove the unwanted meta tags, links from the source code and many more.
+                                <?php _e( 'Add custom code and remove the unwanted meta tags, links from the source code and many more.', 'change-wp-page-permalinks' ); ?>
                             </label>
                         </div>
                     </div>

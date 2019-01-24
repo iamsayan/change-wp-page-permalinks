@@ -24,8 +24,8 @@ function cwpp_custom_rewrite_rule() {
     $cwpp_slug = $cwpp_settings['cwpp_add_rewrite_rule'];
     $cwpp_blog_url = str_replace( '/', '', $cwpp_slug );
 
-    add_rewrite_rule( '^'. $cwpp_blog_url .'/?$', 'index.php?page_id=$matches['. $page_id .']', 'top');
-    add_rewrite_rule( '^'. $cwpp_blog_url .'/page/([0-9]+)/?$', 'index.php?page_id=$matches['. $page_id .']&paged=$matches[1]', 'top');
+    add_rewrite_rule( '^'. $cwpp_blog_url .'/?$', 'index.php?page_id=$matches['. $page_id .']', 'top' );
+    add_rewrite_rule( '^'. $cwpp_blog_url .'/page/([0-9]+)/?$', 'index.php?page_id=$matches['. $page_id .']&paged=$matches[1]', 'top' );
 
 }
 

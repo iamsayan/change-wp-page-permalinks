@@ -3,9 +3,9 @@
  * Plugin Name: WP Page Permalink Extension
  * Plugin URI: https://wordpress.org/plugins/change-wp-page-permalinks/
  * Description: WP Page Permalink Extension plugin will help you to add anything like .html, .php, .aspx, .htm, .asp, .shtml as WordPress Page Extention.
- * Version: 1.5.1
+ * Version: 1.5.2
  * Author: Sayan Datta
- * Author URI: https://profiles.wordpress.org/infosatech/
+ * Author URI: https://www.sayandatta.com
  * License: GPLv3
  * Text Domain: change-wp-page-permalinks
  * Domain Path: /languages
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define ( 'CWPP_PLUGIN_VERSION', '1.5.1' );
+define ( 'CWPP_PLUGIN_VERSION', '1.5.2' );
 
 // Internationalization
 add_action( 'plugins_loaded', 'cwpp_plugin_load_textdomain' );
@@ -107,6 +107,7 @@ function cwpp_enable_custom_page_ext() {
 
 $cwpp_settings = get_option('cwpp_cus_extension');
 
+require_once plugin_dir_path( __FILE__ ) . 'includes/media.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/redirect.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/rewrite.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/trailing-slash.php';
@@ -172,6 +173,7 @@ function cwpp_plugin_settings_page() {
     require_once plugin_dir_path( __FILE__ ) . 'admin/settings-page.php';
 }
 
+require_once plugin_dir_path( __FILE__ ) . 'admin/donate.php';
 require_once plugin_dir_path( __FILE__ ) . 'admin/notice.php';
 
 // add action links

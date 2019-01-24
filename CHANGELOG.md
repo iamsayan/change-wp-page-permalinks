@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.5.2
+
+* Fixed: Media URLs after changing page permalinks.
+
 ## 1.5.1
 
 * Improved: Admin UI.

@@ -1,9 +1,9 @@
 === WP Page Permalink Extension ===
 Contributors: Infosatech
 Tags: permalink, custom permalink, page permalink, page extension, page url, page permalinks, page
-Requires at least: 3.5
+Requires at least: 4.0
 Tested up to: 5.0
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 Requires PHP: 5.4
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
@@ -21,7 +21,7 @@ WordPress page permalink structure or extension is not customizable by default. 
 
 #### What does this plugin do?
 
-This plugin helps to add anything like .html, .php, .aspx, .htm, .asp, .shtml as WordPress Page Extention on a WordPress site running 3.5 and beyond.
+This plugin helps to add anything like .html, .php, .aspx, .htm, .asp, .shtml as WordPress Page Extention on a WordPress site running 4.0 and beyond.
 
 * Allows you to set custom page permalink structure and add an extension to pages.
 * Allows you to remove trailing slashes automatically from WordPress page permalink structure.
@@ -29,7 +29,7 @@ This plugin helps to add anything like .html, .php, .aspx, .htm, .asp, .shtml as
 
 #### Compatibility
 
-This plugin is tested with many popular SEO plugins like Yoast SEO, All In One SEO, SEOPress etc. and fully compatible with WordPress Version 3.5 and beyond and also compatible with any WordPress theme.
+This plugin is tested with many popular SEO plugins like Yoast SEO, All In One SEO, SEOPress etc. and fully compatible with WordPress Version 4.0 and beyond and also compatible with any WordPress theme.
 
 #### Support
 * Community support via the [support forums](https://wordpress.org/support/plugin/change-wp-page-permalinks) at wordpress.org.
@@ -65,6 +65,10 @@ Open any page of your website and you can see the change.
 2. Page permalink structure after using this plugin.
 
 == Changelog ==
+
+= 1.5.2 =
+
+* Fixed: Media URLs after changing page permalinks.
 
 = 1.5.1 =
 
