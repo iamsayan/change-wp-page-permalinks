@@ -17,7 +17,6 @@ add_filter( 'query_vars', 'cwpp_insert_attachment_query_vars' );
 add_filter( 'rewrite_rules_array', 'cwpp_rewrite_rules_array' );
 
 function cwpp_fix_media_attachment_link( $link, $attachment_id ) {
-
     global $wp_rewrite;
     $front_page = get_option( 'page_on_front' );
 
@@ -33,7 +32,6 @@ function cwpp_fix_media_attachment_link( $link, $attachment_id ) {
         // make the link compatible with permalink settings with or without "/" at the end
         $parent_link = rtrim( $parent_link, "/" );
         $link =  $parent_link . '/' . $attachment->post_name . $extension;
-
     }
 
     if( ! empty( $attachment->post_parent ) && $attachment->post_parent == $front_page ) {
@@ -46,22 +44,18 @@ function cwpp_fix_media_attachment_link( $link, $attachment_id ) {
         // make the link compatible with permalink settings with or without "/" at the end
         $parent_link = rtrim( $parent_link, "/" );
         $link =  $parent_link . $slug . $front_page_name . '/' . $attachment->post_name . $extension;
-
     }
 
     return $link;
-
 }
 
 function cwpp_insert_attachment_query_vars( $query_vars ) {
-
     array_push( $query_vars, 'attachment_id' );
     return $query_vars;
 }
 
 function cwpp_rewrite_rules_array( $rules ) {
     $my_rules = array();
-
     $attachments = get_posts( array(
         'post_type'      => 'attachment',
         'posts_per_page' => -1,
@@ -84,5 +78,4 @@ function cwpp_flush_rules_upon_attach_deattach() {
             flush_rewrite_rules();
         }
     }
-
 }

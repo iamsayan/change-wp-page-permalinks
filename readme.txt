@@ -2,9 +2,9 @@
 Contributors: Infosatech
 Tags: permalink, custom permalink, page permalink, page extension, page url, page permalinks, page
 Requires at least: 4.0
-Tested up to: 5.0
-Stable tag: 1.5.2
-Requires PHP: 5.4
+Tested up to: 5.1
+Stable tag: 1.5.3
+Requires PHP: 5.6
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -66,8 +66,15 @@ Open any page of your website and you can see the change.
 
 == Changelog ==
 
+= 1.5.3 =
+
+* Tweak: Now this plugin will automatically regenarate permalinks.
+* Tweak: Adopted the AJAX mechanism to save plugin settings.
+* Fixed: Some unclosed HTML tags.
+
 = 1.5.2 =
 
+* Tested uptp WordPress 5.1.
 * Fixed: Media URLs after changing page permalinks.
 
 = 1.5.1 =

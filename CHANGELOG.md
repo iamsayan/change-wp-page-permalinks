@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.5.3
+
+* Tweak: Now this plugin will automatically regenarate permalinks.
+* Tweak: Adopted the AJAX mechanism to save plugin settings.
+* Fixed: Some unclosed HTML tags.
+
 ## 1.5.2
 
 * Fixed: Media URLs after changing page permalinks.

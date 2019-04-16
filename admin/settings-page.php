@@ -15,8 +15,8 @@
         <h1 class="title">WP Page Permalink Extension<span class="title-count"><?php echo CWPP_PLUGIN_VERSION ?></span></h1>
         <div><?php _e( 'Customize wordpress page permalink structure very easily.', 'change-wp-page-permalinks' ); ?></div><hr>
         <div class="top-sharebar">
-            <a class="share-btn rate-btn" href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?filter=5#new-post" target="_blank" title="Please rate 5 stars if you like WP Page Permalink Extension"><span class="dashicons dashicons-star-filled"></span> Rate 5 stars</a>
-            <a class="share-btn twitter" href="https://twitter.com/home?status=Checkout%20WP%20Page%20Permalink%20Extension,%20a%20%23WordPress%20%23plugin%20that%20helps%20to%20customize%20wordpress%20page%20permalink%20structure%20very%20easily%20https%3A//wordpress.org/plugins/change-wp-page-permalinks/%20via%20%40im_sayaan" target="_blank"><span class="dashicons dashicons-twitter"></span> Tweet about WP Page Permalink Extension</a>
+            <a class="share-btn rate-btn" href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?filter=5#new-post" target="_blank" title="<?php _e( 'Please rate 5 stars if you like WP Page Permalink Extension', 'change-wp-page-permalinks' ); ?>"><span class="dashicons dashicons-star-filled"></span> <?php _e( 'Rate 5 stars', 'change-wp-page-permalinks' ); ?></a>
+            <a class="share-btn twitter" href="https://twitter.com/home?status=Checkout%20WP%20Page%20Permalink%20Extension,%20a%20%23WordPress%20%23plugin%20that%20helps%20to%20customize%20wordpress%20page%20permalink%20structure%20very%20easily%20https%3A//wordpress.org/plugins/change-wp-page-permalinks/%20via%20%40im_sayaan" target="_blank"><span class="dashicons dashicons-twitter"></span> <?php _e( 'Tweet about WP Page Permalink Extension', 'change-wp-page-permalinks' ); ?></a>
         </div>
     </div>
     <div id="poststuff" style="padding-top: 0;">
@@ -32,38 +32,16 @@
                         <form id="saveForm" method="post" action="options.php" style="padding-left: 8px;">
                             <?php settings_fields( 'cwpp_plugin_settings_fields' ); ?>
                             <?php do_settings_sections( 'cwpp_plugin_option' ); ?>
-                            <p><?php submit_button( __( 'Save Changes', 'change-wp-page-permalinks' ), 'primary save-settings', '', false ); ?>
-                            &nbsp;&nbsp;<input type="submit" name="submit" id="submit" class="button flush-rules" form="flushRules" value="<?php _e( 'Regenerate Permalinks', 'change-wp-page-permalinks' ); ?>" />&nbsp;<span class="spinner is-active" style="float: none;margin: -2px 5px 0; display:none;"></span>
-                            &nbsp;&nbsp;<span style="font-size:12px;"><?php _e( 'Save Changes first, before regenerating permalinks!', 'change-wp-page-permalinks' ); ?></p>
+                            <?php submit_button( __( 'Save Settings', 'change-wp-page-permalinks' ), 'primary save-settings', 'save-permalinks' ); ?>
+                            <div id="progressMessage" class="progressModal" style="display:none;">
+                                <?php _e( 'Please wait...', 'change-wp-page-permalinks' ); ?>
+                            </div>
+                            <div id="saveMessage" class="successModal" style="display:none;">
+                                <p class="fbak-success-msg">
+                                    <?php _e( 'Settings Saved Successfully!', 'change-wp-page-permalinks' ); ?>
+                                </p>
+                            </div>
                         </form>
-                        <form id="flushRules" method="post" action="">
-                            <input id="cwpp-submit" name="cwpp_submit" type="hidden" value="yes"/>
-                        </form>
-                        <script>
-                            jQuery(document).ready(function ($) {
-                                $('.flush-rules').click(function() {
-                                    $(".flush-rules").addClass("disabled");
-                                    $(".flush-rules").val("<?php _e( 'Regenerating...', 'change-wp-page-permalinks' ); ?>");
-                                    $(".spinner").show();
-                                });
-                                $("#rewrite-rule").change(function() {
-                                    if ($('#rewrite-rule').is(':checked')) {
-                                        $('.custom-rule').show();
-                                        $('#rule').attr('required', 'required');
-                                    }
-                                    if (!$('#rewrite-rule').is(':checked')) {
-                                        $('.custom-rule').hide();
-                                        $('#rule').removeAttr('required');
-                                    }
-                                });
-                                $("#rewrite-rule").trigger('change');
-                                $(".coffee-amt").change(function() {
-                                    var btn = $('.buy-coffee-btn');
-                                    btn.attr('href', btn.data('link') + $(this).val());
-                                });
-                                $(".coffee-amt").trigger('change');
-                            });
-                        </script>
                     </div>
                 </div>
                 <div class="coffee-box">
@@ -82,16 +60,16 @@
                             <option value="15usd">$15</option>
                             <option value=""><?php _e( 'Custom', 'change-wp-page-permalinks' ); ?></option>
                         </select></p>
-                        <a class="button button-primary buy-coffee-btn" href="https://www.paypal.me/iamsayan/10usd" data-link="https://www.paypal.me/iamsayan/" target="_blank">Buy me a coffee!</a>
+                        <a class="button button-primary buy-coffee-btn" href="https://www.paypal.me/iamsayan/10usd" data-link="https://www.paypal.me/iamsayan/" target="_blank"><?php _e( 'Buy me a coffee!', 'change-wp-page-permalinks' ); ?></a>
                     </div>
                     <span class="coffee-heading"><?php _e( 'Buy me a coffee!', 'change-wp-page-permalinks' ); ?></span>
                     <p style="text-align: justify;"><?php printf( __( 'Thank you for using %s. If you found the plugin useful buy me a coffee! Your donation will motivate and make me happy for all the efforts. You can donate via PayPal.', 'change-wp-page-permalinks' ), '<strong>WP Page Permalink Extension v' . CWPP_PLUGIN_VERSION . '</strong>' ); ?></strong></p>
-                    <p style="text-align: justify; font-size: 12px; font-style: italic;">Developed with <span style="color:#e25555;">♥</span> by <a href="https://www.sayandatta.com" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://github.com/iamsayan/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">GitHub</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">Support</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?filter=5#new-post" target="_blank" style="font-weight: 500;">Rate it</a> (<span style="color:#ffa000;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>) on WordPress.org, if you like this plugin.</p>
+                    <p style="text-align: justify; font-size: 12px; font-style: italic;">Developed with <span style="color:#e25555;">♥</span> by <a href="https://sayandatta.com" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://github.com/iamsayan/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">GitHub</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">Support</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?filter=5#new-post" target="_blank" style="font-weight: 500;">Rate it</a> (<span style="color:#ffa000;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>) on WordPress.org, if you like this plugin.</p>
                 </div>
             </div>
             <div id="postbox-container-1" class="postbox-container">
                 <div class="postbox">
-                    <h3 class="hndle" style="cursor:default;">My Other Plugins!</h3>
+                    <h3 class="hndle" style="cursor: default;text-align: center;"><?php _e( 'My Other Plugins!', 'change-wp-page-permalinks' ); ?></h3>
                     <div class="inside">
                         <div class="misc-pub-section">
                             <span class="dashicons dashicons-clock"></span>
@@ -112,7 +90,7 @@
                         <div class="misc-pub-section">
                             <span class="dashicons dashicons-migrate"></span>
                             <label>
-                                <strong><a href="https://wordpress.org/plugins/fb-account-kit-login/" target="_blank">Facebook Account Kit</a>: </strong>
+                                <strong><a href="https://wordpress.org/plugins/fb-account-kit-login/" target="_blank">Facebook Account Kit Login</a>: </strong>
                                 <?php _e( 'Easily login or register to wordpress by using SMS or Email without any password.', 'change-wp-page-permalinks' ); ?>
                             </label>
                         </div>

@@ -10,12 +10,11 @@
  */
 
 if ( isset($cwpp_settings['cwpp_add_rewrite_rule_cb']) && ($cwpp_settings['cwpp_add_rewrite_rule_cb'] == 1 ) && !empty( $cwpp_settings['cwpp_add_rewrite_rule'] ) ) {
-    add_action('init', 'cwpp_custom_rewrite_rule');
-    add_filter('page_link', 'cwpp_filter_static_permalink', 10, 2); 
+    add_action( 'init', 'cwpp_custom_rewrite_rule' );
+    add_filter( 'page_link', 'cwpp_filter_static_permalink', 10, 2 ); 
 }
 
 function cwpp_custom_rewrite_rule() {
-
     $cwpp_settings = get_option('cwpp_cus_extension');
     $page_id = get_option( 'page_for_posts' );
 
@@ -26,11 +25,9 @@ function cwpp_custom_rewrite_rule() {
 
     add_rewrite_rule( '^'. $cwpp_blog_url .'/?$', 'index.php?page_id=$matches['. $page_id .']', 'top' );
     add_rewrite_rule( '^'. $cwpp_blog_url .'/page/([0-9]+)/?$', 'index.php?page_id=$matches['. $page_id .']&paged=$matches[1]', 'top' );
-
 }
 
 function cwpp_filter_static_permalink( $permalink, $post_id ) {
-
     global $wp_rewrite;
     $cwpp_settings = get_option('cwpp_cus_extension');
     $page_id = get_option( 'page_for_posts' );
@@ -54,6 +51,6 @@ function cwpp_filter_static_permalink( $permalink, $post_id ) {
     if( $post->ID == $page_id ) {
         return home_url( $cwpp_new_url );
     }
-    return $permalink;
 
+    return $permalink;
 }

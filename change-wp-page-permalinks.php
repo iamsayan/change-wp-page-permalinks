@@ -3,9 +3,9 @@
  * Plugin Name: WP Page Permalink Extension
  * Plugin URI: https://wordpress.org/plugins/change-wp-page-permalinks/
  * Description: WP Page Permalink Extension plugin will help you to add anything like .html, .php, .aspx, .htm, .asp, .shtml as WordPress Page Extention.
- * Version: 1.5.2
+ * Version: 1.5.3
  * Author: Sayan Datta
- * Author URI: https://www.sayandatta.com
+ * Author URI: https://sayandatta.com
  * License: GPLv3
  * Text Domain: change-wp-page-permalinks
  * Domain Path: /languages
@@ -35,7 +35,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define ( 'CWPP_PLUGIN_VERSION', '1.5.2' );
+define( 'CWPP_PLUGIN_VERSION', '1.5.3' );
+
+// debug scripts
+//define( 'CWPP_PLUGIN_ENABLE_DEBUG', 'true' );
 
 // Internationalization
 add_action( 'plugins_loaded', 'cwpp_plugin_load_textdomain' );
@@ -54,7 +57,6 @@ register_activation_hook( __FILE__, 'cwpp_plugin_activation' );
 register_deactivation_hook( __FILE__, 'cwpp_plugin_deactivation' );
 
 function cwpp_plugin_activation() {
-
     global $wp_rewrite;
     if ( ! current_user_can( 'activate_plugins' ) ) {
         return;
@@ -72,7 +74,6 @@ function cwpp_plugin_activation() {
 }
 
 function cwpp_plugin_deactivation() {
-
     global $wp_rewrite;
     if ( ! current_user_can( 'activate_plugins' ) ) {
         return;
@@ -93,7 +94,6 @@ function cwpp_plugin_deactivation() {
 add_action( 'init', 'cwpp_enable_custom_page_ext', -1 );
 
 function cwpp_enable_custom_page_ext() {
-
     global $wp_rewrite;
     $cwpp_settings = get_option( 'cwpp_cus_extension' );
     $cwpp_extension = $cwpp_settings['cwpp_custom_extension'];
@@ -115,10 +115,21 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/trailing-slash.php';
 add_action( 'admin_enqueue_scripts', 'cwpp_load_admin_css' );
 
 function cwpp_load_admin_css() {
+    $ver = CWPP_PLUGIN_VERSION;
+    if( defined( 'CWPP_PLUGIN_ENABLE_DEBUG' ) ) {
+        $ver = time();
+    }
+
     // get current screen
     $current_screen = get_current_screen();
     if ( strpos( $current_screen->base, 'wp-page-permalink-extension') !== false ) {
-        wp_enqueue_style( 'cwpp_styles', plugins_url( 'admin/css/admin.min.css', __FILE__ ), array(), CWPP_PLUGIN_VERSION );
+        wp_enqueue_style( 'cwpp_style', plugins_url( 'admin/css/admin.min.css', __FILE__ ), array(), $ver );
+        wp_enqueue_script( 'cwpp-admin', plugins_url( 'admin/js/admin.min.js', __FILE__ ), array(), $ver, true );
+        wp_localize_script( 'cwpp-admin', 'CWPPLocalizeScript', array(
+            'ajaxurl'  => admin_url( 'admin-ajax.php' ),
+            'saving'   => __( 'Saving...', 'change-wp-page-permalinks' ),
+            'savemsg'  => __( 'Save Settings', 'change-wp-page-permalinks' ),
+        ) );
     }
 }
 
@@ -126,7 +137,6 @@ function cwpp_load_admin_css() {
 add_action( 'admin_init', 'cwpp_register_plugin_settings' );
 
 function cwpp_register_plugin_settings() {
-
     global $wp_rewrite;
     $post_id = get_option( 'page_for_posts' );
     $post = get_post( $post_id );
@@ -155,22 +165,28 @@ add_action( 'admin_menu', 'cwpp_admin_menu' );
 
 function cwpp_admin_menu() {
     //Add admin menu option
-    add_submenu_page( 'options-general.php', __( 'WP Page Permalink Extension', 'change-wp-page-permalinks' ), __( 'WP Page Permalink', 'change-wp-page-permalinks' ), 'manage_options', 'wp-page-permalink-extension', 'cwpp_plugin_settings_page' );
+    add_submenu_page( 'options-general.php', __( 'WP Page Permalink Extension', 'change-wp-page-permalinks' ), __( 'WP Page Extension', 'change-wp-page-permalinks' ), 'manage_options', 'wp-page-permalink-extension', 'cwpp_plugin_settings_page' );
 }
 
 function cwpp_plugin_settings_page() { 
-    
-    if ( isset( $_POST['cwpp_submit'] ) && $_POST['cwpp_submit'] == 'yes' ) {
-        flush_rewrite_rules();
-        echo '<div id="message" class="notice notice-success is-dismissible">';
-			echo '<p><strong>' . __( 'Permalink structure updated.', 'change-wp-page-permalinks' ) . '</strong></p>';
-		echo '</div>';
-    }
-    
-    $cwpp_settings = get_option( 'cwpp_cus_extension' ); 
-    global $wp_rewrite;
-
     require_once plugin_dir_path( __FILE__ ) . 'admin/settings-page.php';
+}
+
+function cwpp_ajax_save_admin_scripts() {
+    if ( is_admin() ) { 
+        // Embed the Script on our Plugin's Option Page Only
+        if ( isset($_GET['page']) && $_GET['page'] == 'wp-page-permalink-extension' ) {
+            wp_enqueue_script( 'jquery' );
+            wp_enqueue_script( 'jquery-form' );
+        }
+    }
+}
+
+add_action( 'admin_init', 'cwpp_ajax_save_admin_scripts' );
+add_action( 'wp_ajax_cwpp_trigger_flush_rewrite_rules', 'cwpp_trigger_flush_rewrite_rules' );
+
+function cwpp_trigger_flush_rewrite_rules() {
+    flush_rewrite_rules();
 }
 
 require_once plugin_dir_path( __FILE__ ) . 'admin/donate.php';
@@ -199,7 +215,3 @@ add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'cwpp_add_action
 
 // plugin row elements
 add_filter( 'plugin_row_meta', 'cwpp_plugin_meta_links', 10, 2 );
-
-// turn off yoast seo sitemap caching 
-// debug
-//add_filter('wpseo_enable_xml_sitemap_transient_caching', '__return_false');

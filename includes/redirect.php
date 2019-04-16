@@ -14,7 +14,6 @@ if( !empty($cwpp_settings['cwpp_custom_extension']) && ( isset($cwpp_settings['c
 }
 
 function cwpp_add_redirection_to_custom_url() {
-
     global $wp_rewrite;
     $cwpp_settings = get_option('cwpp_cus_extension');
 

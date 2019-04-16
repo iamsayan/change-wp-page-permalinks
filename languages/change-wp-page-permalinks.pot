@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Page Permalink Extension\n"
-"POT-Creation-Date: 2019-01-24 09:53+0530\n"
-"PO-Revision-Date: 2019-01-24 09:53+0530\n"
+"POT-Creation-Date: 2019-04-16 18:18+0530\n"
+"PO-Revision-Date: 2019-04-16 18:17+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: change-wp-page-permalinks.php\n"
@@ -27,7 +27,7 @@ msgid ""
 "week – that’s awesome! If you like WP Page Permalink Extension and you are "
 "satisfied with the plugin, isn’t that worth a coffee or two? Please consider "
 "donating. Any amount is appreciated. Donations help me to continue support "
-"and development of this free software! Thank you very much!"
+"and development of this free plugin! Thank you very much!"
 msgstr ""
 
 #: admin/donate.php:29
@@ -46,7 +46,7 @@ msgstr ""
 msgid ""
 "Hey, I noticed you've been using WP Page Permalink Extension for more than 1 "
 "week – that’s awesome! Could you please do me a BIG favor and give it a "
-"<strong>5-star</strong> rating on WordPress? Just to help us spread the word "
+"<strong>5-star</strong> rating on WordPress? Just to help me spread the word "
 "and boost my motivation."
 msgstr ""
 
@@ -58,48 +58,48 @@ msgstr ""
 msgid "I already did"
 msgstr ""
 
-#: admin/settings-fields.php:17
+#: admin/settings-fields.php:16
 msgid ""
 "Set custom page permalink here. Currently page permalink structure of this "
 "website is"
 msgstr ""
 
-#: admin/settings-fields.php:27
+#: admin/settings-fields.php:25
 msgid "Pages"
 msgstr ""
 
-#: admin/settings-fields.php:30
+#: admin/settings-fields.php:28
 msgid "Static Posts Page"
 msgstr ""
 
-#: admin/settings-fields.php:33
+#: admin/settings-fields.php:31
 msgid "Select on which page you want to remove trailing slashes automatically."
 msgstr ""
 
-#: admin/settings-fields.php:41
+#: admin/settings-fields.php:37
 msgid "Yes, rewrite slug"
 msgstr ""
 
-#: admin/settings-fields.php:41
+#: admin/settings-fields.php:37
 msgid "For advanced users only"
 msgstr ""
 
-#: admin/settings-fields.php:42
+#: admin/settings-fields.php:38
 msgid ""
 "Set custom slug for your static posts page, if you want to set custom page "
 "slug for static posts page. This will add rewrite rules to make accessible "
 "static post page using custom slug. Be sure what you are doing!"
 msgstr ""
 
-#: admin/settings-fields.php:77
+#: admin/settings-fields.php:59
 msgid "Add Traling Slash?"
 msgstr ""
 
-#: admin/settings-fields.php:81
+#: admin/settings-fields.php:63
 msgid "Enable 301 Redirect?"
 msgstr ""
 
-#: admin/settings-fields.php:82
+#: admin/settings-fields.php:64
 msgid "View"
 msgstr ""
 
@@ -107,35 +107,43 @@ msgstr ""
 msgid "Customize wordpress page permalink structure very easily."
 msgstr ""
 
+#: admin/settings-page.php:18
+msgid "Please rate 5 stars if you like WP Page Permalink Extension"
+msgstr ""
+
+#: admin/settings-page.php:18
+msgid "Rate 5 stars"
+msgstr ""
+
+#: admin/settings-page.php:19
+msgid "Tweet about WP Page Permalink Extension"
+msgstr ""
+
 #: admin/settings-page.php:28
 msgid "Configure Settings"
 msgstr ""
 
-#: admin/settings-page.php:35
-msgid "Save Changes"
-msgstr ""
-
-#: admin/settings-page.php:36
-msgid "Regenerate Permalinks"
+#: admin/settings-page.php:35 change-wp-page-permalinks.php:131
+msgid "Save Settings"
 msgstr ""
 
 #: admin/settings-page.php:37
-msgid "Save Changes first, before regenerating permalinks!"
+msgid "Please wait..."
 msgstr ""
 
-#: admin/settings-page.php:46
-msgid "Regenerating..."
+#: admin/settings-page.php:41
+msgid "Settings Saved Successfully!"
 msgstr ""
 
-#: admin/settings-page.php:83
+#: admin/settings-page.php:61
 msgid "Custom"
 msgstr ""
 
-#: admin/settings-page.php:87
+#: admin/settings-page.php:63 admin/settings-page.php:65
 msgid "Buy me a coffee!"
 msgstr ""
 
-#: admin/settings-page.php:88
+#: admin/settings-page.php:66
 #, php-format
 msgid ""
 "Thank you for using %s. If you found the plugin useful buy me a coffee! Your "
@@ -143,76 +151,80 @@ msgid ""
 "via PayPal."
 msgstr ""
 
-#: admin/settings-page.php:100
+#: admin/settings-page.php:72
+msgid "My Other Plugins!"
+msgstr ""
+
+#: admin/settings-page.php:78
 msgid ""
 "Display last updated info on posts and pages with 'dateModified' Schema "
 "Markup."
 msgstr ""
 
-#: admin/settings-page.php:108
+#: admin/settings-page.php:86
 msgid "Ultimate Facebook Comment Solution with instant email notification."
 msgstr ""
 
-#: admin/settings-page.php:116
+#: admin/settings-page.php:94
 msgid ""
 "Easily login or register to wordpress by using SMS or Email without any "
 "password."
 msgstr ""
 
-#: admin/settings-page.php:124
+#: admin/settings-page.php:102
 msgid ""
 "Simple Posts Ticker is a small tool that shows your most recent posts in a "
 "marquee style."
 msgstr ""
 
-#: admin/settings-page.php:132
+#: admin/settings-page.php:110
 msgid "Automatically republish you old evergreen content to grab better SEO."
 msgstr ""
 
-#: admin/settings-page.php:140
+#: admin/settings-page.php:118
 msgid ""
 "Add custom code and remove the unwanted meta tags, links from the source "
 "code and many more."
 msgstr ""
 
-#: change-wp-page-permalinks.php:136
+#: change-wp-page-permalinks.php:130
+msgid "Saving..."
+msgstr ""
+
+#: change-wp-page-permalinks.php:146
 msgid "Custom Permalink for Pages:"
 msgstr ""
 
-#: change-wp-page-permalinks.php:139
+#: change-wp-page-permalinks.php:149
 msgid "Auto Escape Trailing Slashes on:"
 msgstr ""
 
-#: change-wp-page-permalinks.php:143
+#: change-wp-page-permalinks.php:153
 msgid "Rewrite Static Posts Page Slug?"
 msgstr ""
 
-#: change-wp-page-permalinks.php:144
+#: change-wp-page-permalinks.php:154
 msgid "Custom Slug for Posts Page:"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: change-wp-page-permalinks.php:158
+#: change-wp-page-permalinks.php:168
 msgid "WP Page Permalink Extension"
 msgstr ""
 
-#: change-wp-page-permalinks.php:158
-msgid "WP Page Permalink"
+#: change-wp-page-permalinks.php:168
+msgid "WP Page Extension"
 msgstr ""
 
-#: change-wp-page-permalinks.php:166
-msgid "Permalink structure updated."
-msgstr ""
-
-#: change-wp-page-permalinks.php:182
+#: change-wp-page-permalinks.php:198
 msgid "Settings"
 msgstr ""
 
-#: change-wp-page-permalinks.php:191
+#: change-wp-page-permalinks.php:207
 msgid "Support"
 msgstr ""
 
-#: change-wp-page-permalinks.php:192
+#: change-wp-page-permalinks.php:208
 msgid "Donate"
 msgstr ""
 
@@ -231,5 +243,5 @@ msgid "Sayan Datta"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://www.sayandatta.com"
+msgid "https://sayandatta.com"
 msgstr ""
