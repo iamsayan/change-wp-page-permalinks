@@ -12,7 +12,7 @@
 function cwpp_custom_extension_display() {
     global $wp_rewrite;
     $cwpp_settings = get_option('cwpp_cus_extension');
-    ?><input type="hidden" id="change-trigger" value="no"><code><?php echo get_site_url() ?></code><input id="extension" class="cwpp-change" name="cwpp_cus_extension[cwpp_custom_extension]" type="text" size="40" required style="width:40%;" placeholder="/pages/%pagename%.html" value="<?php if (isset($cwpp_settings['cwpp_custom_extension'])) { echo $wp_rewrite->get_page_permastruct(); } ?>" />
+    ?><input type="hidden" id="change-trigger" value="no"><code><?php echo get_site_url() ?></code>&nbsp;<input id="extension" class="cwpp-change" name="cwpp_cus_extension[cwpp_custom_extension]" type="text" size="40" required style="width:40%;" placeholder="/pages/%pagename%.html" value="<?php if (isset($cwpp_settings['cwpp_custom_extension'])) { echo $wp_rewrite->get_page_permastruct(); } ?>" />
     &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Set custom page permalink here. Currently page permalink structure of this website is', 'change-wp-page-permalinks' ); ?> <?php echo $wp_rewrite->get_page_permastruct(); ?>."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }

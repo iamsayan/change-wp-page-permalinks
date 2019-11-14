@@ -171,3 +171,7 @@ input, select, textarea {
 p.submit {
     margin-bottom: -8px;
 }
+
+input, select, .tooltip .dashicons {
+    vertical-align: middle;
+}

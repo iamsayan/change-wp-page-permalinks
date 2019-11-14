@@ -3,9 +3,9 @@
  * Plugin Name: WP Page Permalink Extension
  * Plugin URI: https://wordpress.org/plugins/change-wp-page-permalinks/
  * Description: WP Page Permalink Extension plugin will help you to add anything like .html, .php, .aspx, .htm, .asp, .shtml as WordPress Page Extention.
- * Version: 1.5.3
+ * Version: 1.5.4
  * Author: Sayan Datta
- * Author URI: https://sayandatta.com
+ * Author URI: https://about.me/iamsayan
  * License: GPLv3
  * Text Domain: change-wp-page-permalinks
  * Domain Path: /languages
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'CWPP_PLUGIN_VERSION', '1.5.3' );
+define( 'CWPP_PLUGIN_VERSION', '1.5.4' );
 
 // debug scripts
 //define( 'CWPP_PLUGIN_ENABLE_DEBUG', 'true' );

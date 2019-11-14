@@ -16,7 +16,7 @@
         <div><?php _e( 'Customize wordpress page permalink structure very easily.', 'change-wp-page-permalinks' ); ?></div><hr>
         <div class="top-sharebar">
             <a class="share-btn rate-btn" href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?filter=5#new-post" target="_blank" title="<?php _e( 'Please rate 5 stars if you like WP Page Permalink Extension', 'change-wp-page-permalinks' ); ?>"><span class="dashicons dashicons-star-filled"></span> <?php _e( 'Rate 5 stars', 'change-wp-page-permalinks' ); ?></a>
-            <a class="share-btn twitter" href="https://twitter.com/home?status=Checkout%20WP%20Page%20Permalink%20Extension,%20a%20%23WordPress%20%23plugin%20that%20helps%20to%20customize%20wordpress%20page%20permalink%20structure%20very%20easily%20https%3A//wordpress.org/plugins/change-wp-page-permalinks/%20via%20%40im_sayaan" target="_blank"><span class="dashicons dashicons-twitter"></span> <?php _e( 'Tweet about WP Page Permalink Extension', 'change-wp-page-permalinks' ); ?></a>
+            <a class="share-btn twitter" href="https://twitter.com/intent/tweet?text=Checkout%20WP%20Page%20Permalink%20Extension,%20a%20%23WordPress%20%23plugin%20that%20helps%20to%20customize%20wordpress%20page%20permalink%20structure%20very%20easily.&tw_p=tweetbutton&url=https://wordpress.org/plugins/change-wp-page-permalinks/&via=im_sayaan" target="_blank"><span class="dashicons dashicons-twitter"></span> <?php _e( 'Tweet about WP Page Permalink Extension', 'change-wp-page-permalinks' ); ?></a>
         </div>
     </div>
     <div id="poststuff" style="padding-top: 0;">
@@ -64,7 +64,7 @@
                     </div>
                     <span class="coffee-heading"><?php _e( 'Buy me a coffee!', 'change-wp-page-permalinks' ); ?></span>
                     <p style="text-align: justify;"><?php printf( __( 'Thank you for using %s. If you found the plugin useful buy me a coffee! Your donation will motivate and make me happy for all the efforts. You can donate via PayPal.', 'change-wp-page-permalinks' ), '<strong>WP Page Permalink Extension v' . CWPP_PLUGIN_VERSION . '</strong>' ); ?></strong></p>
-                    <p style="text-align: justify; font-size: 12px; font-style: italic;">Developed with <span style="color:#e25555;">♥</span> by <a href="https://sayandatta.com" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://github.com/iamsayan/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">GitHub</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">Support</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?filter=5#new-post" target="_blank" style="font-weight: 500;">Rate it</a> (<span style="color:#ffa000;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>) on WordPress.org, if you like this plugin.</p>
+                    <p style="text-align: justify; font-size: 12px; font-style: italic;">Developed with <span style="color:#e25555;">♥</span> by <a href="https://about.me/iamsayan" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://github.com/iamsayan/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">GitHub</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks" target="_blank" style="font-weight: 500;">Support</a> | <a href="https://wordpress.org/support/plugin/change-wp-page-permalinks/reviews/?filter=5#new-post" target="_blank" style="font-weight: 500;">Rate it</a> (<span style="color:#ffa000;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>) on WordPress.org, if you like this plugin.</p>
                 </div>
             </div>
             <div id="postbox-container-1" class="postbox-container">
@@ -82,16 +82,8 @@
                         <div class="misc-pub-section">
                             <span class="dashicons dashicons-admin-comments"></span>
                             <label>
-                                <strong><a href="https://wordpress.org/plugins/ultimate-facebook-comments/" target="_blank">Ultimate Facebook Comments</a>: </strong>
+                                <strong><a href="https://wordpress.org/plugins/ultimate-facebook-comments/" target="_blank">Ultimate Social Comments</a>: </strong>
                                 <?php _e( 'Ultimate Facebook Comment Solution with instant email notification.', 'change-wp-page-permalinks' ); ?>
-                            </label>
-                        </div>
-                        <hr>
-                        <div class="misc-pub-section">
-                            <span class="dashicons dashicons-migrate"></span>
-                            <label>
-                                <strong><a href="https://wordpress.org/plugins/fb-account-kit-login/" target="_blank">Facebook Account Kit Login</a>: </strong>
-                                <?php _e( 'Easily login or register to wordpress by using SMS or Email without any password.', 'change-wp-page-permalinks' ); ?>
                             </label>
                         </div>
                         <hr>

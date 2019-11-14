@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.5.4
+
+* Compatibility with WordPress 5.3.
+* Fixed: Broken Links.
+
 ## 1.5.3
 
 * Tweak: Now this plugin will automatically regenarate permalinks.

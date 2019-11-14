@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Page Permalink Extension\n"
-"POT-Creation-Date: 2019-04-16 18:18+0530\n"
+"POT-Creation-Date: 2019-11-14 23:31+0530\n"
 "PO-Revision-Date: 2019-04-16 18:17+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -42,6 +42,10 @@ msgstr ""
 msgid "Nope&#44; maybe later"
 msgstr ""
 
+#: admin/donate.php:32
+msgid "I don't want to donate"
+msgstr ""
+
 #: admin/notice.php:28
 msgid ""
 "Hey, I noticed you've been using WP Page Permalink Extension for more than 1 "
@@ -56,6 +60,10 @@ msgstr ""
 
 #: admin/notice.php:30
 msgid "I already did"
+msgstr ""
+
+#: admin/notice.php:32
+msgid "I don't want to rate"
 msgstr ""
 
 #: admin/settings-fields.php:16
@@ -167,21 +175,15 @@ msgstr ""
 
 #: admin/settings-page.php:94
 msgid ""
-"Easily login or register to wordpress by using SMS or Email without any "
-"password."
-msgstr ""
-
-#: admin/settings-page.php:102
-msgid ""
 "Simple Posts Ticker is a small tool that shows your most recent posts in a "
 "marquee style."
 msgstr ""
 
-#: admin/settings-page.php:110
+#: admin/settings-page.php:102
 msgid "Automatically republish you old evergreen content to grab better SEO."
 msgstr ""
 
-#: admin/settings-page.php:118
+#: admin/settings-page.php:110
 msgid ""
 "Add custom code and remove the unwanted meta tags, links from the source "
 "code and many more."
@@ -243,5 +245,5 @@ msgid "Sayan Datta"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://sayandatta.com"
+msgid "https://about.me/iamsayan"
 msgstr ""

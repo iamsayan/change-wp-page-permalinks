@@ -2,8 +2,8 @@
 Contributors: Infosatech
 Tags: permalink, custom permalink, page permalink, page extension, page url, page permalinks, page
 Requires at least: 4.0
-Tested up to: 5.1
-Stable tag: 1.5.3
+Tested up to: 5.3
+Stable tag: 1.5.4
 Requires PHP: 5.6
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
@@ -65,6 +65,11 @@ Open any page of your website and you can see the change.
 2. Page permalink structure after using this plugin.
 
 == Changelog ==
+
+= 1.5.4 =
+
+* Compatibility with WordPress 5.3.
+* Fixed: Broken Links.
 
 = 1.5.3 =
 

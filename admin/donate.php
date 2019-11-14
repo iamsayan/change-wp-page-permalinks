@@ -28,7 +28,8 @@ function cwpp_donate_admin_notice() {
         <p><?php _e( 'Hey, I noticed you\'ve been using WP Page Permalink Extension for more than 2 week – that’s awesome! If you like WP Page Permalink Extension and you are satisfied with the plugin, isn’t that worth a coffee or two? Please consider donating. Any amount is appreciated. Donations help me to continue support and development of this free plugin! Thank you very much!', 'change-wp-page-permalinks' ); ?></p>
         <p><a href="https://www.paypal.me/iamsayan" target="_blank" class="button button-secondary"><?php _e( 'Donate Now', 'change-wp-page-permalinks' ); ?></a>&nbsp;
         <a href="<?php echo $dismiss; ?>" class="already-did"><strong><?php _e( 'I already donated', 'change-wp-page-permalinks' ); ?></strong></a>&nbsp;<strong>|</strong>
-        <a href="<?php echo $no_thanks; ?>" class="later"><strong><?php _e( 'Nope&#44; maybe later', 'change-wp-page-permalinks' ); ?></strong></a></p>
+        <a href="<?php echo $no_thanks; ?>" class="later"><strong><?php _e( 'Nope&#44; maybe later', 'change-wp-page-permalinks' ); ?></strong></a>&nbsp;<strong>|</strong>
+        <a href="<?php echo $dismiss; ?>" class="dismiss"><strong><?php _e( 'I don\'t want to donate', 'change-wp-page-permalinks' ); ?></strong></a></p>
     </div>
 <?php
 }
